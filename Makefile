@@ -1,6 +1,5 @@
 MACCORE_DIR = ../MonoMac/monomac/src
-COCOS2D_DIRR = ../cocos2d-iphone/cocos2d/
-COCOS2D_DIR = /Users/duane/Source/Cocos2d/cocos2d-iphone/cocos2d
+COCOS2D_DIR = ../cocos2d-iphone/cocos2d/
 
 all: bindgen.exe Cocos2d.cs Cocos2d.dll
 
