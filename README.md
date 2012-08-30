@@ -29,12 +29,12 @@ You can remove references to MainWindow items from the project.
 
 Modify the AppDelegate.cs file.  
 
+...
 using Cocos2d;
 
 [assembly: MonoMac.RequiredFramework("cocos2d.dylib")]
 namespace YOURNAMESPACE
 {
-...
 	public override void FinishedLaunching (NSObject notification)
 	{
 		CCDirector director = CCDirector.SharedDirector ();
