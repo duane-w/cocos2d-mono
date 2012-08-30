@@ -8,7 +8,7 @@ using GLenum = System.Int16;
 using System;
 using System.Runtime.InteropServices;
 
-namespace CCocos2D
+namespace Cocos2D
 {
 #if FALSE
 	public class PointerToArray :  IDisposable

@@ -1381,7 +1381,7 @@ using UITouch = System.IntPtr;
 using UIImage = System.IntPtr;
 using CGAffineTransform = MonoMac.CoreGraphics.CGAffineTransform;
 
-namespace CCocos2D
+namespace Cocos2D
 {");
 		ruleList = File.ReadAllLines("/Users/duane/Source/Cocos2d/cocos2d-iphone/cocos2d/ruleslist.txt").ToList();
 		var skipFiles = ruleList.Where (rl => rl.StartsWith ("SkipFile")).Select (rl => rl.Split(':')[1].Trim());
