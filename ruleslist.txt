@@ -1,0 +1,30 @@
+IgnoreInterface: CCDirectorIOS
+IgnoreInterface: CCDirectorDisplayLink
+SkipFile: CCDirectorIOS.h
+SkipFile: iOS/CCGLView.h
+SkipFile: CCTouchDelegateProtocol.h
+SkipFile: CCES2Renderer.h
+SkipFile: CCESRenderer.h
+SkipFile: CCTouchDispatcher.h
+SkipFile: CCTouchHandler.h
+SkipInterfaceWith: CCTargetedTouchDelegate
+SkipSelectorWith: UIInterfaceOrientation
+SkipSelectorWith: NSZone
+SkipSelectorWith: sortUsingFunction
+SkipSelectorWith: CC_CALLBACK_ND
+SkipSelectorWith: ccV2F_C4B_T2F
+SkipSelectorWith: vaList
+RenameProperty: CCMenuItemFont.FontName.Static DefaultFontName
+RenameProperty: CCMenuItemFont.FontSize.Static DefaultFontSize
+AddArgToConstructor#CCLabelTTF_initWithFile:.bool withFile
+AddArgToConstructor#CCSprite_initWithFile:.bool withFile
+AddArgToConstructor#CCTexture2D_initWithCGImage:.bool withCGImage
+ChangeClassBaseType#CCDirector.NSObject
+AllowNullArg#CCMenuItemImage_initWithNormalImage:selectedImage:disabledImage:block:.disabledImage
+AllowNullArg#CCMenuItemImage_initWithNormalImage:selectedImage:disabledImage:target:selector:.disabledImage
+RenameMethodForSelector#CCGLProgram_setUniformLocation:with3fv:count:.SetUniformLocationWith3fv
+RenameMethodForSelector#CCGLProgram_setUniformLocation:with4fv:count:.SetUniformLocationWith4fv
+RenameDelegateByParams#NSObject sender.CCSenderCallback
+RenameDelegateByParams#IntPtr block, IntPtr sender.UnusedCocos2DCallback
+RenameDelegateByParams#.CCGenericCallback
+RenameDelegateByParams#CCNode node.CCNodeCallback
