@@ -4,9 +4,10 @@ cocos2d-mono
 Bindings for cocos2d to use with MonoTouch and MonoMac
 
 Edit the makefile to specify the directories for:
+```charp
 MACCORE_DIR = ../MonoMac/monomac/src
 COCOS2D_DIR = ../cocos2d-iphone/cocos2d/
-
+```
 
 The binding generator is currently setup to produce bindings to be used with MonoMac.  It should be
 very straightforward to convert the generated Cocos2d.cs file for use with MonoTouch.
