@@ -29,7 +29,6 @@ You can remove references to MainWindow items from the project.
 
 Modify the AppDelegate.cs file.  
 
-...
 using Cocos2d;
 
 [assembly: MonoMac.RequiredFramework("cocos2d.dylib")]
