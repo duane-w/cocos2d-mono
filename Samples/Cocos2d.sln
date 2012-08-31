@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyProject", "EmptyProject\EmptyProject.csproj", "{D93CD343-6E36-47B8-8B76-C3B90562B579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuTest", "MenuTest\MenuTest.csproj", "{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EffectsTest", "EffectsTest\EffectsTest.csproj", "{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		AppStore|x86 = AppStore|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D93CD343-6E36-47B8-8B76-C3B90562B579}.AppStore|x86.ActiveCfg = AppStore|x86
+		{D93CD343-6E36-47B8-8B76-C3B90562B579}.AppStore|x86.Build.0 = AppStore|x86
+		{D93CD343-6E36-47B8-8B76-C3B90562B579}.Debug|x86.ActiveCfg = Debug|x86
+		{D93CD343-6E36-47B8-8B76-C3B90562B579}.Debug|x86.Build.0 = Debug|x86
+		{D93CD343-6E36-47B8-8B76-C3B90562B579}.Release|x86.ActiveCfg = Release|x86
+		{D93CD343-6E36-47B8-8B76-C3B90562B579}.Release|x86.Build.0 = Release|x86
+		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.AppStore|x86.ActiveCfg = AppStore|x86
+		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.AppStore|x86.Build.0 = AppStore|x86
+		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.Debug|x86.ActiveCfg = Debug|x86
+		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.Debug|x86.Build.0 = Debug|x86
+		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.Release|x86.ActiveCfg = Release|x86
+		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.Release|x86.Build.0 = Release|x86
+		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.AppStore|x86.ActiveCfg = AppStore|x86
+		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.AppStore|x86.Build.0 = AppStore|x86
+		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.Debug|x86.ActiveCfg = Debug|x86
+		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.Debug|x86.Build.0 = Debug|x86
+		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.Release|x86.ActiveCfg = Release|x86
+		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = EffectsTest\EffectsTest.csproj
+	EndGlobalSection
+EndGlobal

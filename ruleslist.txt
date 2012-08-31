@@ -25,6 +25,6 @@ AllowNullArg#CCMenuItemImage_initWithNormalImage:selectedImage:disabledImage:tar
 RenameMethodForSelector#CCGLProgram_setUniformLocation:with3fv:count:.SetUniformLocationWith3fv
 RenameMethodForSelector#CCGLProgram_setUniformLocation:with4fv:count:.SetUniformLocationWith4fv
 RenameDelegateByParams#NSObject sender.CCSenderCallback
-RenameDelegateByParams#IntPtr block, IntPtr sender.UnusedCocos2DCallback
+RenameDelegateByParams#IntPtr block, IntPtr sender.UnusedCocos2dCallback
 RenameDelegateByParams#.CCGenericCallback
 RenameDelegateByParams#CCNode node.CCNodeCallback

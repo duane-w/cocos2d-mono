@@ -18,7 +18,7 @@ using UITouch = System.IntPtr;
 using UIImage = System.IntPtr;
 using CGAffineTransform = MonoMac.CoreGraphics.CGAffineTransform;
 
-namespace Cocos2D
+namespace Cocos2d
 {
 	//@protocol CCRGBAProtocol <NSObject>
 	[BaseType (typeof (NSObject))]
