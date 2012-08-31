@@ -1,7 +1,7 @@
 cocos2d-mono
 ============
 
-Bindings for cocos2d to use with MonoTouch and MonoMac
+Bindings for [cocos2d 2.0.0](http://www.cocos2d-iphone.org/) to use with MonoTouch and MonoMac
 
 Edit the makefile to specify the directories for:
 ```charp
