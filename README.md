@@ -36,6 +36,12 @@ using Cocos2d;
 [assembly: MonoMac.RequiredFramework("cocos2d.dylib")]
 namespace YOURNAMESPACE
 {
+	public AppDelegate ()
+	{
+		Type t = typeof(CCDirector);
+		MonoMac.ObjCRuntime.Runtime.RegisterAssembly(t.Assembly); 
+	}
+	
 	public override void FinishedLaunching (NSObject notification)
 	{
 		CCDirector director = CCDirector.SharedDirector ();
