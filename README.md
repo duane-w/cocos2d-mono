@@ -18,7 +18,7 @@ targeted for MonoMac.
 
 Included is a Cocos2d.dll that can be used with MonoMac.  Also included here is cocos2d.dylib.
 
-Create a new MonoMac application.  
+Create a new MonoMac application.  See this [wiki page](https://github.com/trustme/cocos2d-mono/wiki/Setting-up-the-MainMenu.xib) for more details.
 
 Edit the MainMenu.xib.  Add a Window with an NSView with a CCGLView.
 Create an outlet on the App Delegate named glView that points to the CCGLView.
@@ -36,6 +36,12 @@ using Cocos2d;
 [assembly: MonoMac.RequiredFramework("cocos2d.dylib")]
 namespace YOURNAMESPACE
 {
+	public AppDelegate ()
+	{
+		Type t = typeof(CCDirector);
+		MonoMac.ObjCRuntime.Runtime.RegisterAssembly(t.Assembly); 
+	}
+	
 	public override void FinishedLaunching (NSObject notification)
 	{
 		CCDirector director = CCDirector.SharedDirector ();
