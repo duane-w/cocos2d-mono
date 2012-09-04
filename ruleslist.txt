@@ -13,9 +13,20 @@ SkipSelectorWith: NSZone
 SkipSelectorWith: sortUsingFunction
 SkipSelectorWith: CC_CALLBACK_ND
 SkipSelectorWith: ccV2F_C4B_T2F
-SkipSelectorWith: vaList
+SkipSelectorWith: NS_REQUIRES_NIL_TERMINATION
+SkipSelectorByName#CCMenuItem_cleanup
+SkipSelectorByName#CCActionInterval_isDone
+#SkipSelectorByName#CCActionInterval_reverse
+SkipSelectorByName#CCFlipX3D_actionWithDuration:
+SkipSelectorByName#CCMoveBy_actionWithDuration:position:
+SkipSelectorByName#CCTMXLayer_addChild:z:tag:
+MakeSelectorInternalWith#vaList
+RenameMethodForSelector#CCMenu_alignItemsInColumns:vaList:.AlignItemsInColumnsVaList
+RenameMethodForSelector#CCMenu_alignItemsInRows:vaList:.AlignItemsInRowsVaList
 RenameProperty: CCMenuItemFont.FontName.Static DefaultFontName
 RenameProperty: CCMenuItemFont.FontSize.Static DefaultFontSize
+PreserverConstructorAsMethod#CCMenu_initWithItems:vaList:
+ChangeReturnType#CCMenu_initWithItems:vaList:.CCMenu
 AddArgToConstructor#CCLabelTTF_initWithFile:.bool withFile
 AddArgToConstructor#CCSprite_initWithFile:.bool withFile
 AddArgToConstructor#CCTexture2D_initWithCGImage:.bool withCGImage
@@ -28,3 +39,10 @@ RenameDelegateByParams#NSObject sender.CCSenderCallback
 RenameDelegateByParams#IntPtr block, IntPtr sender.UnusedCocos2dCallback
 RenameDelegateByParams#.CCGenericCallback
 RenameDelegateByParams#CCNode node.CCNodeCallback
+ChangeReturnType#CCArray_objectAtIndex:.NSObject
+ChangeReturnType#CCSequence_actions:.CCFiniteTimeAction
+ChangeReturnType#CCSequence_actionWithArray:.CCFiniteTimeAction
+ChangeReturnType#CCSequence_actionOne:two:.CCFiniteTimeAction
+ChangeReturnType#CCMenuItemFont_itemWithString:.CCMenuItemFont
+ChangeSignatureForSelector#CCMenuItemToggleCallback.CCMenuItemToggle sender
+RenameDelegate#CCMenuItemToggleDelegateInitWithItemsblock.CCMenuItemToggleCallback

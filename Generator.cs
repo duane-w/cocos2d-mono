@@ -247,6 +247,14 @@ class Declarations
 		if (TrivialParser.renameDelegateByParameters.TryGetValue (delegateSignature, out name) == false)
 			name = ClassName + "Delegate" + TrivialParser.AsMethod (block.selector).Replace (":", "");
 
+		string newName;
+		if (TrivialParser.renameDelegate.TryGetValue (name, out newName) == true)
+			name = newName;
+
+		string newDelegateSignature;
+		if (TrivialParser.changeSignatureForSelector.TryGetValue (name, out newDelegateSignature) == true)
+			delegateSignature = newDelegateSignature;
+
 		if (createdDelegates.Contains (name) == false) {
 			TrivialParser.gencs.WriteLine (string.Format ("\t\tdelegate void {0} ({1});", name, delegateSignature));
 			createdDelegates.Add (name);
@@ -304,6 +312,9 @@ class Declarations
 			if (TrivialParser.skipSelector.FirstOrDefault (rl => d.signature.Contains(rl)) != null)
 				continue;
 
+			if (TrivialParser.skipSelectorByName.Contains (this.ClassName + "_" + d.selector))
+				continue;
+
             string delegateName = "";
 			string parameters = d.parameters;
             if (d.hasBlock)
@@ -320,7 +331,9 @@ class Declarations
             if ((d.retval == "NSObject" || d.retval == this.ClassName) && d.selector.StartsWith("init"))
             {
                 retVal = "IntPtr";
-                selector = "Constructor";
+				bool preserveConstructorAsMethod = TrivialParser.preserverConstructorAsMethod.Contains (this.ClassName + "_" + d.selector);
+				if (preserveConstructorAsMethod == false)
+                	selector = "Constructor";
 
                 if (string.IsNullOrEmpty(parameters))
                     continue;
@@ -367,11 +380,16 @@ class Declarations
 
 			methodNameSelector = TrivialParser.AsMethod(TrivialParser.CleanSelector(methodNameSelector));
 
-            if (string.IsNullOrEmpty(parameters) == false && parameters.Contains("NS_REQUIRES_NIL_TERMINATION"))
-			{
-                gencs.AppendLine("\t\t[Internal]");
-				//ProcessRequiresNILTermination(d, methodNameSelector);
+			foreach (var f in TrivialParser.makeSelectorInternalWith)  {
+				if (d.signature.Contains(f)) {
+					gencs.AppendLine("\t\t[Internal]");
+					break;
+				}
 			}
+
+			string newReturnType = null;
+			if (TrivialParser.changeReturnType.TryGetValue (this.ClassName + "_" + selector, out newReturnType) == true)
+				retVal = newReturnType;
 
             if (d.appearance)
                 gencs.AppendLine("\t\t[Appearance]");
@@ -1108,7 +1126,7 @@ class TrivialParser
         //Console.WriteLine ("->{0}\np={1} q-p={2}", line, p, q-p);
 		string retClass = line.Substring(p + 1, q - p - 1);
 		//if (retClass == "id")
-		//	retClass = className;
+			//retClass = className;
         string retval = RemapType(retClass);
         p = line.IndexOf(';');
         string signature = line.Substring(q + 1, p - q).Trim(new char[] { ' ', ';' });
@@ -1117,6 +1135,10 @@ class TrivialParser
         //Console.WriteLine ("SIG: {0} {1}", line, p);
         string selector = MakeSelector(signature);
         string parameters = MakeParameters(signature, selector, className);
+
+		//string newReturnType = null;
+		//if (changeReturnType.TryGetValue (className + "_" + selector, out newReturnType) == true)
+			//retval = newReturnType;
 
         //Console.WriteLine ("signature: {0}", signature);
         //Console.WriteLine ("selector: {0}", selector);
@@ -1204,7 +1226,7 @@ class TrivialParser
                 need_close = true;
         }
 
-        while (haveEnd == true || (line = r.ReadLine()) != null && !line.StartsWith("@end"))
+        while (haveEnd == true || !line.StartsWith("@end"))
         {
             if (line.StartsWith("#"))
                 continue;
@@ -1333,10 +1355,12 @@ class TrivialParser
         options = new OptionSet() {
 			{ "limit=", "Limit methods to methods for the specific API level (ex: 5_0)", arg => limit = arg },
 			{ "extra=", "Extra attribute to add, for example: 'Since(6,0)'", arg => extraAttribute = arg },
+			{ "rules=", "List of rules to apply to the beinding", arg => ruleListFile = arg },
 			{ "help", "Shows the help", a => ShowHelp () }
 		};
     }
 
+	static string ruleListFile = null;
 	List<string> ruleList = null;
 	static public List<string> skipSelector = null;
 	static public Dictionary<string,string> renameProperty = null;
@@ -1345,6 +1369,12 @@ class TrivialParser
 	static public Dictionary<string, string> allowNullArg = null;
 	static public Dictionary<string, string> renameMethodForSelector = null;
 	static public Dictionary<string, string> renameDelegateByParameters = null;
+	static public Dictionary<string, string> changeReturnType = null;
+	static public Dictionary<string, string> changeSignatureForSelector = null;
+	static public Dictionary<string, string> renameDelegate = null;
+	static public List<string> makeSelectorInternalWith = null;
+	static public List<string> preserverConstructorAsMethod = null;
+	static public List<string> skipSelectorByName = null;
 
     void Run(string[] args)
     {
@@ -1383,7 +1413,7 @@ using CGAffineTransform = MonoMac.CoreGraphics.CGAffineTransform;
 
 namespace Cocos2d
 {");
-		ruleList = File.ReadAllLines("/Users/duane/Source/Cocos2d/cocos2d-iphone/cocos2d/ruleslist.txt").ToList();
+		ruleList = File.ReadAllLines(ruleListFile).ToList();
 		var skipFiles = ruleList.Where (rl => rl.StartsWith ("SkipFile")).Select (rl => rl.Split(':')[1].Trim());
 		var skipInterfaces = ruleList.Where (rl => rl.StartsWith ("SkipInterfaceWith")).Select (rl => rl.Split(':')[1].Trim());
 		skipSelector = ruleList.Where (rl => rl.StartsWith ("SkipSelectorWith")).Select (rl => rl.Split(':')[1].Trim()).ToList();
@@ -1399,6 +1429,15 @@ namespace Cocos2d
 			.ToDictionary (rl => rl.Split('.')[0], rl => rl.Split('.')[1]);
   		renameDelegateByParameters = ruleList.Where (rl => rl.StartsWith ("RenameDelegateByParams")).Select (rl => rl.Split('#')[1].Trim())
 			.ToDictionary (rl => rl.Split('.')[0], rl => rl.Split('.')[1]);
+		changeReturnType = ruleList.Where (rl => rl.StartsWith ("ChangeReturnType")).Select (rl => rl.Split('#')[1].Trim())
+			.ToDictionary (rl => rl.Split('.')[0], rl => rl.Split('.')[1]);
+		changeSignatureForSelector = ruleList.Where (rl => rl.StartsWith ("ChangeSignatureForSelector")).Select (rl => rl.Split('#')[1].Trim())
+			.ToDictionary (rl => rl.Split('.')[0], rl => rl.Split('.')[1]);
+		renameDelegate = ruleList.Where (rl => rl.StartsWith ("RenameDelegate")).Select (rl => rl.Split('#')[1].Trim())
+			.ToDictionary (rl => rl.Split('.')[0], rl => rl.Split('.')[1]);
+		makeSelectorInternalWith = ruleList.Where (rl => rl.StartsWith ("MakeSelectorInternalWith")).Select (rl => rl.Split('#')[1].Trim()).ToList();
+		preserverConstructorAsMethod = ruleList.Where (rl => rl.StartsWith ("PreserverConstructorAsMethod")).Select (rl => rl.Split('#')[1].Trim()).ToList();
+		skipSelectorByName = ruleList.Where (rl => rl.StartsWith ("SkipSelectorByName")).Select (rl => rl.Split('#')[1].Trim()).ToList();
 
 		foreach (string f in sources)
         {

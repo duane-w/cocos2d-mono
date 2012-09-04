@@ -1270,11 +1270,6 @@ namespace Cocos2d
 	interface CCFlipX3D {
 
 		//From Generated Property
-		//+(id) actionWithDuration:(ccTime)d;
-		[Static]
-		[Export ("actionWithDuration:")]
-		NSObject ActionWithDuration (ccTime d);
-
 		//-(id) initWithDuration:(ccTime)d;
 		[Export ("initWithDuration:")]
 		IntPtr Constructor (ccTime d);
@@ -1683,10 +1678,6 @@ namespace Cocos2d
 		[Export ("initWithDuration:")]
 		IntPtr Constructor (ccTime d);
 
-		//-(BOOL) isDone;
-		[Export ("isDone")]
-		bool IsDone ();
-
 		//- (CCActionInterval*) reverse;
 		[Export ("reverse")]
 		CCActionInterval Reverse ();
@@ -1699,21 +1690,15 @@ namespace Cocos2d
 	interface CCSequence {
 
 		//From Generated Property
-		//+(id) actions: (CCFiniteTimeAction*) action1, ... NS_REQUIRES_NIL_TERMINATION;
-		[Static]
-		[Internal]
-		[Export ("actions:")]
-		NSObject Actions (CCFiniteTimeAction action1,IntPtr NS_REQUIRES_NIL_TERMINATION);
-
 		//+(id) actionWithArray: (NSArray*) arrayOfActions;
 		[Static]
 		[Export ("actionWithArray:")]
-		NSObject ActionWithArray (NSArray arrayOfActions);
+		CCFiniteTimeAction ActionWithArray (NSArray arrayOfActions);
 
 		//+(id) actionOne:(CCFiniteTimeAction*)actionOne two:(CCFiniteTimeAction*)actionTwo;
 		[Static]
 		[Export ("actionOne:two:")]
-		NSObject ActionOne (CCFiniteTimeAction actionOne,CCFiniteTimeAction two);
+		CCFiniteTimeAction ActionOne (CCFiniteTimeAction actionOne,CCFiniteTimeAction two);
 
 		//-(id) initOne:(CCFiniteTimeAction*)actionOne two:(CCFiniteTimeAction*)actionTwo;
 		[Export ("initOne:two:")]
@@ -1758,12 +1743,6 @@ namespace Cocos2d
 	interface CCSpawn {
 
 		//From Generated Property
-		//+(id) actions: (CCFiniteTimeAction*) action1, ... NS_REQUIRES_NIL_TERMINATION;
-		[Static]
-		[Internal]
-		[Export ("actions:")]
-		NSObject Actions (CCFiniteTimeAction action1,IntPtr NS_REQUIRES_NIL_TERMINATION);
-
 		//+(id) actionWithArray: (NSArray*) arrayOfActions;
 		[Static]
 		[Export ("actionWithArray:")]
@@ -1857,11 +1836,6 @@ namespace Cocos2d
 	interface CCMoveBy {
 
 		//From Generated Property
-		//+(id) actionWithDuration: (ccTime)duration position:(CGPoint)deltaPosition;
-		[Static]
-		[Export ("actionWithDuration:position:")]
-		NSObject ActionWithDuration (ccTime duration,PointF position);
-
 		//-(id) initWithDuration: (ccTime)duration position:(CGPoint)deltaPosition;
 		[Export ("initWithDuration:position:")]
 		IntPtr Constructor (ccTime duration,PointF position);
@@ -2915,6 +2889,10 @@ namespace Cocos2d
 		[Export ("actionManager")]
 		CCActionManager ActionManager { get; set;  }
 
+		//@property (nonatomic, readwrite, retain) CCEventDispatcher* eventDispatcher;
+		[Export ("eventDispatcher")]
+		CCEventDispatcher EventDispatcher { get; set;  }
+
 		//+(CCDirector*)sharedDirector;
 		[Static]
 		[Export ("sharedDirector")]
@@ -3772,11 +3750,10 @@ namespace Cocos2d
 	interface CCLayerMultiplex {
 
 		//From Generated Property
-		//+(id) layerWithLayers: (CCLayer*) layer, ... NS_REQUIRES_NIL_TERMINATION;
-		[Static]
+		//-(id) initWithLayers: (CCLayer*) layer vaList:(va_list) params;
 		[Internal]
-		[Export ("layerWithLayers:")]
-		NSObject LayerWithLayers (CCLayer layer,IntPtr NS_REQUIRES_NIL_TERMINATION);
+		[Export ("initWithLayers:vaList:")]
+		IntPtr Constructor (CCLayer layer,IntPtr vaList);
 
 		//-(void) switchTo: (unsigned int) n;
 		[Export ("switchTo:")]
@@ -3806,16 +3783,15 @@ namespace Cocos2d
 		[Export ("enabled")]
 		bool Enabled { get; set;  }
 
-		//+ (id) menuWithItems: (CCMenuItem*) item, ... NS_REQUIRES_NIL_TERMINATION;
-		[Static]
-		[Internal]
-		[Export ("menuWithItems:")]
-		NSObject MenuWithItems (CCMenuItem item,IntPtr NS_REQUIRES_NIL_TERMINATION);
-
 		//+ (id) menuWithArray:(NSArray*)arrayOfItems;
 		[Static]
 		[Export ("menuWithArray:")]
 		NSObject MenuWithArray (NSArray arrayOfItems);
+
+		//- (id) initWithItems: (CCMenuItem*) item vaList: (va_list) args;
+		[Internal]
+		[Export ("initWithItems:vaList:")]
+		CCMenu InitWithItems (CCMenuItem item,IntPtr vaList);
 
 		//- (id) initWithArray:(NSArray*)arrayOfItems;
 		[Export ("initWithArray:")]
@@ -3837,15 +3813,15 @@ namespace Cocos2d
 		[Export ("alignItemsHorizontallyWithPadding:")]
 		void AlignItemsHorizontallyWithPadding (float padding);
 
-		//-(void) alignItemsInColumns: (NSNumber *) columns, ... NS_REQUIRES_NIL_TERMINATION;
+		//-(void) alignItemsInColumns: (NSNumber *) columns vaList: (va_list) args;
 		[Internal]
-		[Export ("alignItemsInColumns:")]
-		void AlignItemsInColumns (NSNumber columns,IntPtr NS_REQUIRES_NIL_TERMINATION);
+		[Export ("alignItemsInColumns:vaList:")]
+		void AlignItemsInColumnsVaList (NSNumber columns,IntPtr vaList);
 
-		//-(void) alignItemsInRows: (NSNumber *) rows, ... NS_REQUIRES_NIL_TERMINATION;
+		//-(void) alignItemsInRows: (NSNumber *) rows vaList: (va_list) args;
 		[Internal]
-		[Export ("alignItemsInRows:")]
-		void AlignItemsInRows (NSNumber rows,IntPtr NS_REQUIRES_NIL_TERMINATION);
+		[Export ("alignItemsInRows:vaList:")]
+		void AlignItemsInRowsVaList (NSNumber rows,IntPtr vaList);
 
 		//-(void) setHandlerPriority:(NSInteger)newPriority;
 		[Export ("setHandlerPriority:")]
@@ -3925,10 +3901,6 @@ namespace Cocos2d
 		//-(void) setTarget:(id)target selector:(SEL)selector;
 		[Export ("setTarget:selector:")]
 		void SetTarget (NSObject target,Selector selector);
-
-		//-(void) cleanup;
-		[Export ("cleanup")]
-		void Cleanup ();
 
 		//Detected properties
 		[Export ("isEnabled")]
@@ -4052,7 +4024,7 @@ namespace Cocos2d
 		//+(id) itemWithString: (NSString*) value;
 		[Static]
 		[Export ("itemWithString:")]
-		NSObject ItemWithString (string value);
+		CCMenuItemFont ItemWithString (string value);
 
 		//+(id) itemWithString: (NSString*) value target:(id) r selector:(SEL) s;
 		[Static]
@@ -4224,7 +4196,7 @@ namespace Cocos2d
 
 
 	}
-		delegate void CCMenuItemToggleDelegateInitWithItemsblock (NSObject obj);
+		delegate void CCMenuItemToggleCallback (CCMenuItemToggle sender);
 
 	//@interface CCMenuItemToggle : CCMenuItem <CCRGBAProtocol>
 	[BaseType (typeof (CCMenuItem))]
@@ -4247,20 +4219,19 @@ namespace Cocos2d
 		[Export ("subItems")]
 		NSMutableArray SubItems { get; set;  }
 
-		//+(id) itemWithTarget:(id)target selector:(SEL)selector items:(CCMenuItem*) item, ... NS_REQUIRES_NIL_TERMINATION;
-		[Static]
-		[Internal]
-		[Export ("itemWithTarget:selector:items:")]
-		NSObject ItemWithTarget (NSObject target,Selector selector,CCMenuItem items,IntPtr NS_REQUIRES_NIL_TERMINATION);
-
 		//+(id) itemWithItems:(NSArray*)arrayOfItems block:(void(^)(id sender))block;
 		[Static]
 		[Export ("itemWithItems:block:")]
 		NSObject ItemWithItems (NSArray arrayOfItems,CCSenderCallback _delegate);
 
+		//-(id) initWithTarget:(id)target selector:(SEL)selector items:(CCMenuItem*) item vaList:(va_list) args;
+		[Internal]
+		[Export ("initWithTarget:selector:items:vaList:")]
+		IntPtr Constructor (NSObject target,Selector selector,CCMenuItem items,IntPtr vaList);
+
 		//-(id) initWithItems:(NSArray*)arrayOfItems block:(void (^)(id))block;
 		[Export ("initWithItems:block:")]
-		IntPtr Constructor (NSArray arrayOfItems,CCMenuItemToggleDelegateInitWithItemsblock _delegate);
+		IntPtr Constructor (NSArray arrayOfItems,CCMenuItemToggleCallback _delegate);
 
 		//-(CCMenuItem*) selectedItem;
 		[Export ("selectedItem")]
@@ -5118,6 +5089,10 @@ namespace Cocos2d
 	interface CCProgressTimer {
 
 		//From Generated Property
+		//@property (nonatomic) ccColor3B color;
+		[Export ("color")]
+		ccColor3B Color { get; set;  }
+
 		//@property (nonatomic) GLubyte opacity;
 		[Export ("opacity")]
 		GLubyte Opacity { get; set;  }
@@ -5159,6 +5134,11 @@ namespace Cocos2d
 		[Export ("initWithSprite:")]
 		IntPtr Constructor (CCSprite sprite);
 
+		//-(void) setColor:(ccColor3B)color;
+		// From protocol 'CCRGBAProtocol'
+		[Export ("setColor:")]
+		void SetColor (ccColor3B color);
+
 		//-(void) setOpacity: (GLubyte) opacity;
 		// From protocol 'CCRGBAProtocol'
 		[Export ("setOpacity:")]
@@ -5173,11 +5153,6 @@ namespace Cocos2d
 		// From protocol 'CCRGBAProtocol'
 		[Export ("doesOpacityModifyRGB")]
 		bool DoesOpacityModifyRGB ();
-
-		//Detected properties
-		// From protocol 'CCRGBAProtocol'
-		[Export ("color")]
-		ccColor3B Color { get; set; }
 
 
 	}
@@ -5673,6 +5648,10 @@ namespace Cocos2d
 		[Export ("reorderBatch:")]
 		void ReorderBatch (bool reorder);
 
+		//-(id) addSpriteWithoutQuad:(CCSprite*)child z:(NSUInteger)z tag:(NSInteger)aTag;
+		[Export ("addSpriteWithoutQuad:z:tag:")]
+		NSObject AddSpriteWithoutQuad (CCSprite child,uint z,int tag);
+
 		//-(void) addQuadFromSprite:(CCSprite*)sprite quadIndex:(NSUInteger)index;
 		[Export ("addQuadFromSprite:quadIndex:")]
 		void AddQuadFromSprite (CCSprite sprite,uint quadIndex);
@@ -5904,10 +5883,6 @@ namespace Cocos2d
 		//-(void) setupTiles;
 		[Export ("setupTiles")]
 		void SetupTiles ();
-
-		//-(void) addChild: (CCNode*)node z:(NSInteger)z tag:(NSInteger)tag;
-		[Export ("addChild:z:tag:")]
-		void AddChild (CCNode node,int z,int tag);
 
 
 	}
@@ -6217,13 +6192,25 @@ namespace Cocos2d
 		[Export ("contentSize")]
 		SizeF ContentSize ();
 
+		//- (void) drawAtPoint:(CGPoint)point;
+		[Export ("drawAtPoint:")]
+		void DrawAtPoint (PointF point);
+
 		//- (void) drawInRect:(CGRect)rect;
 		[Export ("drawInRect:")]
 		void DrawInRect (RectangleF rect);
 
+		//- (id) initWithCGImage:(CGImageRef)cgImage resolutionType:(ccResolutionType)resolution;
+		[Export ("initWithCGImage:resolutionType:")]
+		IntPtr Constructor (CGImageRef cgImage,ccResolutionType resolutionType);
+
 		//- (id) initWithCGImage:(CGImageRef)cgImage;
 		[Export ("initWithCGImage:")]
 		IntPtr Constructor (CGImageRef cgImage, bool withCGImage);
+
+		//- (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions hAlignment:(CCTextAlignment)alignment vAlignment:(CCVerticalTextAlignment) vertAlignment lineBreakMode:(CCLineBreakMode)lineBreakMode fontName:(NSString*)name fontSize:(CGFloat)size;
+		[Export ("initWithString:dimensions:hAlignment:vAlignment:lineBreakMode:fontName:fontSize:")]
+		IntPtr Constructor (string str,SizeF dimensions,CCTextAlignment hAlignment,CCVerticalTextAlignment vAlignment,CCLineBreakMode lineBreakMode,string fontName,float fontSize);
 
 		//- (id) initWithString:(NSString*)string dimensions:(CGSize)dimensions hAlignment:(CCTextAlignment)alignment vAlignment:(CCVerticalTextAlignment) vertAlignment fontName:(NSString*)name fontSize:(CGFloat)size;
 		[Export ("initWithString:dimensions:hAlignment:vAlignment:fontName:fontSize:")]
@@ -6233,10 +6220,18 @@ namespace Cocos2d
 		[Export ("initWithString:fontName:fontSize:")]
 		IntPtr Constructor (string str,string fontName,float fontSize);
 
+		//-(id) initWithPVRFile: (NSString*) file;
+		[Export ("initWithPVRFile:")]
+		IntPtr Constructor (string file);
+
 		//+(void) PVRImagesHavePremultipliedAlpha:(BOOL)haveAlphaPremultiplied;
 		[Static]
 		[Export ("PVRImagesHavePremultipliedAlpha:")]
 		void PVRImagesHavePremultipliedAlpha (bool haveAlphaPremultiplied);
+
+		//-(void) setTexParameters: (ccTexParams*) texParams;
+		[Export ("setTexParameters:")]
+		void SetTexParameters (ccTexParams texParams);
 
 		//- (void) setAntiAliasTexParameters;
 		[Export ("setAntiAliasTexParameters")]
@@ -6250,11 +6245,6 @@ namespace Cocos2d
 		[Export ("generateMipmap")]
 		void GenerateMipmap ();
 
-		//+(CCTexture2DPixelFormat) defaultAlphaPixelFormat;
-		[Static]
-		[Export ("defaultAlphaPixelFormat")]
-		CCTexture2DPixelFormat DefaultAlphaPixelFormat ();
-
 		//-(NSUInteger) bitsPerPixelForFormat;
 		[Export ("bitsPerPixelForFormat")]
 		uint BitsPerPixelForFormat ();
@@ -6267,6 +6257,11 @@ namespace Cocos2d
 		[Static]
 		[Export ("bitsPerPixelForFormat:")]
 		uint BitsPerPixelForFormat (CCTexture2DPixelFormat format);
+
+		//Detected properties
+		[Static]
+		[Export ("defaultAlphaPixelFormat")]
+		CCTexture2DPixelFormat DefaultAlphaPixelFormat { get; set; }
 
 
 	}
@@ -6428,6 +6423,10 @@ namespace Cocos2d
 		//-(CCTexture2D*) addPVRImage:(NSString*) filename;
 		[Export ("addPVRImage:")]
 		CCTexture2D AddPVRImage (string filename);
+
+		//-(void) dumpCachedTextureInfo;
+		[Export ("dumpCachedTextureInfo")]
+		void DumpCachedTextureInfo ();
 
 
 	}
@@ -6791,6 +6790,10 @@ namespace Cocos2d
 	interface CCTransitionSplitCols {
 
 		//From Generated Property
+		//-(CCActionInterval*) action;
+		[Export ("action")]
+		CCActionInterval Action ();
+
 		//-(CCActionInterval*) easeActionWithAction:(CCActionInterval*)action;
 		// From protocol 'CCTransitionEaseScene'
 		[Export ("easeActionWithAction:")]
@@ -6817,6 +6820,10 @@ namespace Cocos2d
 	interface CCTransitionFadeTR {
 
 		//From Generated Property
+		//-(CCActionInterval*) actionWithSize:(ccGridSize) vector;
+		[Export ("actionWithSize:")]
+		CCActionInterval ActionWithSize (ccGridSize vector);
+
 		//-(CCActionInterval*) easeActionWithAction:(CCActionInterval*)action;
 		// From protocol 'CCTransitionEaseScene'
 		[Export ("easeActionWithAction:")]
@@ -6891,9 +6898,25 @@ namespace Cocos2d
 
 	}
 
+	//@interface CCTransitionProgressRadialCW : CCTransitionProgress
+	[BaseType (typeof (CCTransitionProgress))]
+	interface CCTransitionProgressRadialCW {
+
+		//From Generated Property
+
+	}
+
 	//@interface CCTransitionProgressHorizontal : CCTransitionProgress
 	[BaseType (typeof (CCTransitionProgress))]
 	interface CCTransitionProgressHorizontal {
+
+		//From Generated Property
+
+	}
+
+	//@interface CCTransitionProgressVertical : CCTransitionProgress
+	[BaseType (typeof (CCTransitionProgress))]
+	interface CCTransitionProgressVertical {
 
 		//From Generated Property
 
@@ -6907,9 +6930,25 @@ namespace Cocos2d
 
 	}
 
+	//@interface CCTransitionProgressOutIn : CCTransitionProgress
+	[BaseType (typeof (CCTransitionProgress))]
+	interface CCTransitionProgressOutIn {
+
+		//From Generated Property
+
+	}
+
 	//@interface EAGLView : CCGLView
 	[BaseType (typeof (CCGLView))]
 	interface EAGLView {
+
+		//From Generated Property
+
+	}
+
+	//@interface MacView : CCGLView
+	[BaseType (typeof (CCGLView))]
+	interface MacView {
 
 		//From Generated Property
 

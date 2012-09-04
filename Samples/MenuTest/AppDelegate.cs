@@ -23,8 +23,7 @@ namespace MenuTest
 			director.View = glView;
 			director.DisplayStats = true;
 
-			MenuTest mt = new MenuTest();
-			director.RunWithScene(mt.Scene());
+			director.RunWithScene(MenuTest.Scene());
 		}
 
 		public override bool ApplicationShouldTerminateAfterLastWindowClosed (NSApplication sender)

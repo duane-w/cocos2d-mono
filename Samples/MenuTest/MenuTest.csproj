@@ -77,6 +77,8 @@
     </Compile>
     <Compile Include="MenuTest.cs" />
     <Compile Include="Layer2.cs" />
+    <Compile Include="Layer3.cs" />
+    <Compile Include="Layer4.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />

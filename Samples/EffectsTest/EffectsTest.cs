@@ -55,14 +55,14 @@ namespace EffectsTest
 			CCSprite grossini = new CCSprite ("grossinis_sister2.png", true);
 			node.AddChild (grossini, 1);
 			grossini.Position = new PointF(x/3, y/2);
-			CCScaleBy sc = new CCScaleBy (2, 5);
+			CCScaleBy sc = null;//new CCScaleBy (2, 5);
 			CCActionInterval sc_back = sc.Reverse ();
 			grossini.RunAction (new CCRepeatForever (new CCSequence (sc, sc_back)));
 
 			CCSprite tamara = new CCSprite ("grossinis_sister1.png", true);
 			node.AddChild (tamara, 1, (int)EffectLayers.kTagSprite2);
 			tamara.Position = new PointF (2*x/3, y/2);
-			CCScaleBy sc2 = new CCScaleBy (2, 5);
+			CCScaleBy sc2 = null;//new CCScaleBy (2, 5);
 			CCActionInterval sc2_back = sc2.Reverse ();
 			tamara.RunAction (new CCRepeatForever (new CCSequence (sc2, sc2_back)));
 

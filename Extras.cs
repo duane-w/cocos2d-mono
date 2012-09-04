@@ -3,6 +3,7 @@ using MonoMac.ObjCRuntime;
 using MonoMac.AppKit;
 using GLfloat = System.Single;
 using GLubyte = System.Byte;
+using GLuint = System.UInt32;
 using CGFloat = System.Double;
 using GLenum = System.Int16;
 using System;
@@ -56,9 +57,17 @@ namespace Cocos2d
 #endif
 
 	public struct ccArray {
-		uint num, max;
-		NSObject arr;
+		public uint num, max;
+		public NSObject arr;
 	} 
+
+	public struct ccTexParams {
+		public GLuint	minFilter;
+		public GLuint	magFilter;
+		public GLuint	wrapS;
+		public GLuint	wrapT;
+	}
+
 	public struct ccGridSize
 	{
 		public ccGridSize (int x, int y)
@@ -73,9 +82,9 @@ namespace Cocos2d
 
 	public struct ccVertex3F
 	{
-		float  x;
-		float  y;
-		float  z;
+		public float  x;
+		public float  y;
+		public float  z;
 	}
 
 	public struct ccColor3B
@@ -86,31 +95,31 @@ namespace Cocos2d
 			this.g = g;
 			this.b = b;
 		}
-		GLubyte	r;
-		GLubyte	g;
-		GLubyte b;
+		public GLubyte	r;
+		public GLubyte	g;
+		public GLubyte b;
 	}
 
 	public struct ccColor4B
 	{
-		GLubyte	r;
-		GLubyte	g;
-		GLubyte	b;
-		GLubyte a;
+		public GLubyte	r;
+		public GLubyte	g;
+		public GLubyte	b;
+		public GLubyte a;
 	}
 
 	public struct ccColor4F {
-	GLfloat r;
-	GLfloat g;
-	GLfloat b;
-	GLfloat a;
+		public GLfloat r;
+		public GLfloat g;
+		public GLfloat b;
+		public GLfloat a;
 	}
 
 	public struct ccQuad3 {
-		ccVertex3F		bl;
-		ccVertex3F		br;
-		ccVertex3F		tl;
-		ccVertex3F		tr;
+		public ccVertex3F		bl;
+		public ccVertex3F		br;
+		public ccVertex3F		tl;
+		public ccVertex3F		tr;
 	} 
 
 	public struct ccV3F_C4B_T2F_Quad
@@ -179,23 +188,23 @@ namespace Cocos2d
 	public struct ccBlendFunc
 	{
 		//! source blend function
-		GLenum src;
+		public GLenum src;
 		//! destination blend function
-		GLenum dst;
+		public GLenum dst;
 	} 
 
 	public struct CGPoint {
-	  CGFloat x;
-	  CGFloat y;
+	  public CGFloat x;
+	  public CGFloat y;
 	}
 
 	public struct ccBezierConfig {
 		//! end position of the bezier
-		CGPoint endPosition;
+		public CGPoint endPosition;
 		//! Bezier control point 1
-		CGPoint controlPoint_1;
+		public CGPoint controlPoint_1;
 		//! Bezier control point 2
-		CGPoint controlPoint_2;
+		public CGPoint controlPoint_2;
 	} 
 
 	public enum tOrientation{
@@ -223,18 +232,18 @@ namespace Cocos2d
 	}
 
 	public struct tImageTGA {
-		int status;
-		byte type, pixelDepth;
+		public int status;
+		public byte type, pixelDepth;
 
 		/** map width */
-		short width;
+		public short width;
 
 		/** map height */
-		short height;
+		public short height;
 
 		/** raw data */
-		byte imageData;
-		int flipped;
+		public byte imageData;
+		public int flipped;
 	}
 
 	public enum CCTexture2DPixelFormat {
@@ -288,8 +297,8 @@ namespace Cocos2d
 	} 
 
 	public struct CGAffineTransformX {
-	  CGFloat a, b, c, d;
-	  CGFloat tx, ty;
+	  public CGFloat a, b, c, d;
+	  public CGFloat tx, ty;
 	}
 
 	public enum tCCPositionType {

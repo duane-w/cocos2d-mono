@@ -76,8 +76,7 @@ namespace MenuTest
 
 				CCMenuItemImage item1 = new CCMenuItemImage("btn-play-normal.png", "btn-play-selected.png", null, 
 				delegate {
-					MenuTest mainMenu = new MenuTest();
-					CCDirector.SharedDirector ().RunWithScene(mainMenu.Scene());
+					CCDirector.SharedDirector ().RunWithScene(MenuTest.Scene());
 				});
 
 				CCMenuItemImage item2 = new CCMenuItemImage("btn-highscores-normal.png", "btn-highscores-selected.png", null, 

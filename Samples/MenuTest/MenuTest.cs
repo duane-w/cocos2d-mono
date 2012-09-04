@@ -5,18 +5,13 @@ using System.Drawing;
 
 namespace MenuTest
 {
-	public class MenuTest
+	public class MenuTest : CCLayer
 	{
 		CCMenuItem disabledItem;
 
 		public MenuTest ()
 		{
-		}
-
-		public CCScene Scene ()
-		{
 			CCDirector director = CCDirector.SharedDirector ();
-			CCScene scene = new CCScene ();
 			SizeF size = director.WinSize ();
 			CCMenu menu = null;
 
@@ -33,10 +28,11 @@ namespace MenuTest
 		
 			CCMenuItemImage item2 = new CCMenuItemImage ("SendScoreButton.png", "SendScoreButtonPressed.png", null, cb);
 
-			CCLabelAtlas labelAtlas = new CCLabelAtlas ("1992", "fps_images.png", 12, 32, '.');
+			CCLabelAtlas labelAtlas = new CCLabelAtlas ("0123456789", "fps_images.png", 12, 32, '.');
 			CCMenuItemLabel item3 = new CCMenuItemLabel(labelAtlas,
 				delegate (NSObject sender) {
-				((CCMenuItemLabel)sender).Rotation = 30f;
+				CCDirector.SharedDirector ().EventDispatcher.AddMouseDelegate (this, -128-1);
+				this.Schedule (new MonoMac.ObjCRuntime.Selector ("allowTouches"), 5.0f);
 			});
 
 			item3.DisabledColor = new ccColor3B (32, 32, 64);
@@ -54,7 +50,9 @@ namespace MenuTest
 			CCLabelBMFont label = new CCLabelBMFont ("configuration", "bitmapFontTest3.fnt");
 			CCMenuItemLabel item5 = new CCMenuItemLabel (label,
 				delegate {
-					
+				CCScene scene = new CCScene ();
+				scene.AddChild (new Layer4 ());
+				CCDirector.SharedDirector ().ReplaceScene (scene);
 			});
 			item5.Scale = 0.8f;
 
@@ -87,7 +85,34 @@ namespace MenuTest
 			}
 
 			menu.Position = new PointF(size.Width/2, size.Height/2);
-			scene.AddChild(menu);
+			this.AddChild(menu);
+		}
+
+		#region Disable mouse events
+		[Export("allowTouches")]
+		void AllowTouches()
+		{
+			CCDirector.SharedDirector ().EventDispatcher.RemoveMouseDelegate (this);
+		}
+		public override bool CcMouseDown (MonoMac.AppKit.NSEvent evt)
+		{
+			return true;
+		}
+		public override bool CcMouseMoved (MonoMac.AppKit.NSEvent evt)
+		{
+			return true;
+		}
+		public override bool CcMouseDragged (MonoMac.AppKit.NSEvent evt)
+		{
+			return true;
+		}
+		#endregion
+
+		static public CCScene Scene ()
+		{
+			CCScene scene = new CCScene ();
+			MenuTest mt = new MenuTest();
+			scene.AddChild (mt);
 
 			return scene;
 		}
@@ -95,10 +120,11 @@ namespace MenuTest
 		void cb(NSObject sender)
 		{
 			CCScene scene =  new CCScene();
-			CCLabelTTF label = new CCLabelTTF("Goodbye World", "Marker Felt", 64);
-			SizeF size = CCDirector.SharedDirector().WinSize ();
-			label.Position = new PointF(size.Width/2, size.Height/2);
-			scene.AddChild(label);
+			//CCLabelTTF label = new CCLabelTTF("Goodbye World", "Marker Felt", 64);
+			//SizeF size = CCDirector.SharedDirector().WinSize ();
+			//label.Position = new PointF(size.Width/2, size.Height/2);
+			//scene.AddChild(label);
+			scene.AddChild(new Layer3());
 			CCDirector.SharedDirector().ReplaceScene(scene);
 		}
 	}
