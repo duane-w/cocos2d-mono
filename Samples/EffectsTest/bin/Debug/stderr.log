@@ -1,0 +1,40 @@
+2012-09-05 19:30:56.322 EffectsTest[56396:1007] init default
+2012-09-05 19:30:56.323 EffectsTest[56396:1007] cocos2d: cocos2d v2.0.0
+2012-09-05 19:30:56.324 EffectsTest[56396:1007] cocos2d: Using Director Type:CCDirectorDisplayLink
+2012-09-05 19:30:56.359 EffectsTest[56396:1007] cocos2d: OS version: 10.8.0 (0x0a080000)
+2012-09-05 19:30:56.359 EffectsTest[56396:1007] cocos2d: GL_VENDOR:   ATI Technologies Inc.
+2012-09-05 19:30:56.359 EffectsTest[56396:1007] cocos2d: GL_RENDERER: AMD Radeon HD 6770M OpenGL Engine
+2012-09-05 19:30:56.359 EffectsTest[56396:1007] cocos2d: GL_VERSION:  2.1 ATI-1.0.25
+2012-09-05 19:30:56.360 EffectsTest[56396:1007] cocos2d: GL_MAX_TEXTURE_SIZE: 16384
+2012-09-05 19:30:56.360 EffectsTest[56396:1007] cocos2d: GL_MAX_TEXTURE_UNITS: 16
+2012-09-05 19:30:56.360 EffectsTest[56396:1007] cocos2d: GL_MAX_SAMPLES: 8
+2012-09-05 19:30:56.360 EffectsTest[56396:1007] cocos2d: GL supports PVRTC: NO
+2012-09-05 19:30:56.361 EffectsTest[56396:1007] cocos2d: GL supports BGRA8888 textures: YES
+2012-09-05 19:30:56.361 EffectsTest[56396:1007] cocos2d: GL supports NPOT textures: YES
+2012-09-05 19:30:56.361 EffectsTest[56396:1007] cocos2d: GL supports discard_framebuffer: NO
+2012-09-05 19:30:56.361 EffectsTest[56396:1007] cocos2d: GL supports shareable VAO: YES
+2012-09-05 19:30:56.361 EffectsTest[56396:1007] cocos2d: Director's thread: DisplayLink thread
+2012-09-05 19:30:56.361 EffectsTest[56396:1007] cocos2d: compiled with Profiling Support: NO
+2012-09-05 19:30:56.428 EffectsTest[56396:1007] cocos2d: startAnimation
+2012-09-05 19:30:57.668 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e2d3ee0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:30:58.152 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e2dce70 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:30:59.221 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7fa2ad40 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:00.040 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e2e6220 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:01.593 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e2e8aa0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:02.145 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7fa37650 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:03.063 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7fa3f460 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:03.731 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e526e10 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:04.165 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e47ba00 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:04.550 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e47f3a0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:04.784 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e2eb240 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:04.968 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e481ea0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:05.134 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e2ef6b0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:05.301 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7fa42230 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:05.452 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e52afb0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:05.635 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7fa44ad0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:05.803 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e52ce90 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:05.969 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e52ee50 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:06.120 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7a597bb0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:06.287 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e482c70 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:06.454 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7e563ba0 | target:EffectsTest.TextLayer selector:(checkAnim:)>
+2012-09-05 19:31:07.757 EffectsTest[56396:9603] cocos2d: deallocing <CCTimer = 0x7fa47e40 | target:EffectsTest.TextLayer selector:(checkAnim:)>

@@ -586,6 +586,11 @@ namespace Cocos2d
 		[Export ("initWithDuration:points:tension:")]
 		IntPtr Constructor (ccTime duration,CCPointArray points,float tension);
 
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -594,6 +599,16 @@ namespace Cocos2d
 	interface CCCardinalSplineBy {
 
 		//From Generated Property
+		// Constructor from 'CCCardinalSplineTo'
+		//-(id) initWithDuration:(ccTime)duration points:(CCPointArray*)points tension:(CGFloat)tension;
+		[Export ("initWithDuration:points:tension:")]
+		IntPtr Constructor (ccTime duration,CCPointArray points,float tension);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -611,6 +626,16 @@ namespace Cocos2d
 		[Export ("initWithDuration:points:")]
 		IntPtr Constructor (ccTime dt,CCPointArray points);
 
+		// Constructor from 'CCCardinalSplineTo'
+		//-(id) initWithDuration:(ccTime)duration points:(CCPointArray*)points tension:(CGFloat)tension;
+		[Export ("initWithDuration:points:tension:")]
+		IntPtr Constructor (ccTime duration,CCPointArray points,float tension);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -627,6 +652,16 @@ namespace Cocos2d
 		//-(id) initWithDuration:(ccTime)dt points:(CCPointArray*)points;
 		[Export ("initWithDuration:points:")]
 		IntPtr Constructor (ccTime dt,CCPointArray points);
+
+		// Constructor from 'CCCardinalSplineTo'
+		//-(id) initWithDuration:(ccTime)duration points:(CCPointArray*)points tension:(CGFloat)tension;
+		[Export ("initWithDuration:points:tension:")]
+		IntPtr Constructor (ccTime duration,CCPointArray points,float tension);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -1109,6 +1144,11 @@ namespace Cocos2d
 		[Export ("grid")]
 		CCGridBase Grid ();
 
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -1129,6 +1169,16 @@ namespace Cocos2d
 		[Export ("setVertex:vertex:")]
 		void SetVertex (ccGridSize pos,ccVertex3F vertex);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -1148,6 +1198,16 @@ namespace Cocos2d
 		//-(void)setTile:(ccGridSize)pos coords:(ccQuad3)coords;
 		[Export ("setTile:coords:")]
 		void SetTile (ccGridSize pos,ccQuad3 coords);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -1170,6 +1230,11 @@ namespace Cocos2d
 		[Export ("initWithAction:duration:")]
 		IntPtr Constructor (CCAction action,ccTime duration);
 
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -1191,6 +1256,11 @@ namespace Cocos2d
 		[Export ("initWithAction:duration:")]
 		IntPtr Constructor (CCAction action,ccTime duration);
 
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -1211,6 +1281,11 @@ namespace Cocos2d
 		//-(id)initWithAction:(CCAction*)action duration:(ccTime)d;
 		[Export ("initWithAction:duration:")]
 		IntPtr Constructor (CCAction action,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -1262,6 +1337,16 @@ namespace Cocos2d
 		[Export ("initWithWaves:amplitude:grid:duration:")]
 		IntPtr Constructor (int wav,float amplitude,ccGridSize grid,ccTime duration);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -1274,6 +1359,11 @@ namespace Cocos2d
 		[Export ("initWithDuration:")]
 		IntPtr Constructor (ccTime d);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
 
 	}
 
@@ -1282,6 +1372,16 @@ namespace Cocos2d
 	interface CCFlipY3D {
 
 		//From Generated Property
+		// Constructor from 'CCFlipX3D'
+		//-(id) initWithDuration:(ccTime)d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
 
 	}
 
@@ -1306,6 +1406,16 @@ namespace Cocos2d
 		//-(id)initWithPosition:(CGPoint)pos radius:(float)r grid:(ccGridSize)gridSize duration:(ccTime)d;
 		[Export ("initWithPosition:radius:grid:duration:")]
 		IntPtr Constructor (PointF pos,float radius,ccGridSize grid,ccTime duration);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -1336,6 +1446,16 @@ namespace Cocos2d
 		[Export ("initWithPosition:radius:waves:amplitude:grid:duration:")]
 		IntPtr Constructor (PointF pos,float radius,int waves,float amplitude,ccGridSize grid,ccTime duration);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -1352,6 +1472,16 @@ namespace Cocos2d
 		//-(id)initWithRange:(int)range shakeZ:(BOOL)shakeZ grid:(ccGridSize)gridSize duration:(ccTime)d;
 		[Export ("initWithRange:shakeZ:grid:duration:")]
 		IntPtr Constructor (int range,bool shakeZ,ccGridSize grid,ccTime duration);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -1378,6 +1508,16 @@ namespace Cocos2d
 		[Export ("initWithWaves:amplitude:grid:duration:")]
 		IntPtr Constructor (int wav,float amplitude,ccGridSize grid,ccTime duration);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -1402,6 +1542,16 @@ namespace Cocos2d
 		//-(id)initWithWaves:(int)wav amplitude:(float)amp horizontal:(BOOL)h vertical:(BOOL)v grid:(ccGridSize)gridSize duration:(ccTime)d;
 		[Export ("initWithWaves:amplitude:horizontal:vertical:grid:duration:")]
 		IntPtr Constructor (int wav,float amplitude,bool horizontal,bool vertical,ccGridSize grid,ccTime duration);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -1431,6 +1581,16 @@ namespace Cocos2d
 		//-(id)initWithPosition:(CGPoint)pos twirls:(int)t amplitude:(float)amp grid:(ccGridSize)gridSize duration:(ccTime)d;
 		[Export ("initWithPosition:twirls:amplitude:grid:duration:")]
 		IntPtr Constructor (PointF pos,int twirls,float amplitude,ccGridSize grid,ccTime duration);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -1548,6 +1708,11 @@ namespace Cocos2d
 	interface CCCallFuncN {
 
 		//From Generated Property
+		// Constructor from 'CCCallFunc'
+		//-(id) initWithTarget: (id) t selector:(SEL) s;
+		[Export ("initWithTarget:selector:")]
+		IntPtr Constructor (NSObject t,Selector selector);
+
 
 	}
 
@@ -1564,6 +1729,11 @@ namespace Cocos2d
 		//-(id) initWithTarget:(id) t selector:(SEL) s data:(void*) d;
 		[Export ("initWithTarget:selector:data:")]
 		IntPtr Constructor (NSObject t,Selector selector,IntPtr data);
+
+		// Constructor from 'CCCallFunc'
+		//-(id) initWithTarget: (id) t selector:(SEL) s;
+		[Export ("initWithTarget:selector:")]
+		IntPtr Constructor (NSObject t,Selector selector);
 
 
 	}
@@ -1585,6 +1755,11 @@ namespace Cocos2d
 		//-(id) initWithTarget:(id) t selector:(SEL) s object:(id)object;
 		[Export ("initWithTarget:selector:object:")]
 		IntPtr Constructor (NSObject t,Selector selector,NSObject obj);
+
+		// Constructor from 'CCCallFunc'
+		//-(id) initWithTarget: (id) t selector:(SEL) s;
+		[Export ("initWithTarget:selector:")]
+		IntPtr Constructor (NSObject t,Selector selector);
 
 
 	}
@@ -1955,6 +2130,16 @@ namespace Cocos2d
 	interface CCBezierTo {
 
 		//From Generated Property
+		// Constructor from 'CCBezierBy'
+		//-(id) initWithDuration: (ccTime) t bezier:(ccBezierConfig) c;
+		[Export ("initWithDuration:bezier:")]
+		IntPtr Constructor (ccTime t,ccBezierConfig bezier);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2270,6 +2455,16 @@ namespace Cocos2d
 	interface CCPageTurn3D {
 
 		//From Generated Property
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2331,6 +2526,16 @@ namespace Cocos2d
 		[Export ("initWithRange:shakeZ:grid:duration:")]
 		IntPtr Constructor (int range,bool shakeZ,ccGridSize grid,ccTime duration);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2347,6 +2552,16 @@ namespace Cocos2d
 		//-(id)initWithRange:(int)range shatterZ:(BOOL)shatterZ grid:(ccGridSize)gridSize duration:(ccTime)d;
 		[Export ("initWithRange:shatterZ:grid:duration:")]
 		IntPtr Constructor (int range,bool shatterZ,ccGridSize grid,ccTime duration);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -2365,6 +2580,16 @@ namespace Cocos2d
 		[Export ("initWithSeed:grid:duration:")]
 		IntPtr Constructor (int s,ccGridSize grid,ccTime duration);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2373,6 +2598,16 @@ namespace Cocos2d
 	interface CCFadeOutTRTiles {
 
 		//From Generated Property
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2381,6 +2616,16 @@ namespace Cocos2d
 	interface CCFadeOutBLTiles {
 
 		//From Generated Property
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2389,6 +2634,16 @@ namespace Cocos2d
 	interface CCFadeOutUpTiles {
 
 		//From Generated Property
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2397,6 +2652,16 @@ namespace Cocos2d
 	interface CCFadeOutDownTiles {
 
 		//From Generated Property
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2413,6 +2678,16 @@ namespace Cocos2d
 		//-(id)initWithSeed:(int)s grid:(ccGridSize)gridSize duration:(ccTime)d;
 		[Export ("initWithSeed:grid:duration:")]
 		IntPtr Constructor (int s,ccGridSize grid,ccTime duration);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -2439,6 +2714,16 @@ namespace Cocos2d
 		[Export ("initWithWaves:amplitude:grid:duration:")]
 		IntPtr Constructor (int wav,float amplitude,ccGridSize grid,ccTime duration);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2464,6 +2749,16 @@ namespace Cocos2d
 		[Export ("initWithJumps:amplitude:grid:duration:")]
 		IntPtr Constructor (int j,float amplitude,ccGridSize grid,ccTime duration);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2480,6 +2775,16 @@ namespace Cocos2d
 		//-(id)initWithRows:(int)rows duration:(ccTime)duration;
 		[Export ("initWithRows:duration:")]
 		IntPtr Constructor (int rows,ccTime duration);
+
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -2498,6 +2803,16 @@ namespace Cocos2d
 		[Export ("initWithCols:duration:")]
 		IntPtr Constructor (int cols,ccTime duration);
 
+		// Constructor from 'CCGridAction'
+		//-(id) initWithSize:(ccGridSize)gridSize duration:(ccTime)d;
+		[Export ("initWithSize:duration:")]
+		IntPtr Constructor (ccGridSize gridSize,ccTime duration);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
+
 
 	}
 
@@ -2514,6 +2829,11 @@ namespace Cocos2d
 		//- (id)initWithDuration:(ccTime)aDuration key:(NSString *)key from:(float)from to:(float)to;
 		[Export ("initWithDuration:key:from:to:")]
 		IntPtr Constructor (ccTime aDuration,string key,float from,float to);
+
+		// Constructor from 'CCActionInterval'
+		//-(id) initWithDuration: (ccTime) d;
+		[Export ("initWithDuration:")]
+		IntPtr Constructor (ccTime d);
 
 
 	}
@@ -3192,6 +3512,16 @@ namespace Cocos2d
 		[Export ("setVertex:vertex:")]
 		void SetVertex (ccGridSize pos,ccVertex3F vertex);
 
+		// Constructor from 'CCGridBase'
+		//-(id) initWithSize:(ccGridSize)gridSize texture:(CCTexture2D*)texture flippedTexture:(BOOL)flipped;
+		[Export ("initWithSize:texture:flippedTexture:")]
+		IntPtr Constructor (ccGridSize gridSize,CCTexture2D texture,bool flippedTexture);
+
+		// Constructor from 'CCGridBase'
+		//-(id)initWithSize:(ccGridSize)gridSize;
+		[Export ("initWithSize:")]
+		IntPtr Constructor (ccGridSize gridSize);
+
 
 	}
 
@@ -3211,6 +3541,16 @@ namespace Cocos2d
 		//-(void)setTile:(ccGridSize)pos coords:(ccQuad3)coords;
 		[Export ("setTile:coords:")]
 		void SetTile (ccGridSize pos,ccQuad3 coords);
+
+		// Constructor from 'CCGridBase'
+		//-(id) initWithSize:(ccGridSize)gridSize texture:(CCTexture2D*)texture flippedTexture:(BOOL)flipped;
+		[Export ("initWithSize:texture:flippedTexture:")]
+		IntPtr Constructor (ccGridSize gridSize,CCTexture2D texture,bool flippedTexture);
+
+		// Constructor from 'CCGridBase'
+		//-(id)initWithSize:(ccGridSize)gridSize;
+		[Export ("initWithSize:")]
+		IntPtr Constructor (ccGridSize gridSize);
 
 
 	}
@@ -3742,6 +4082,16 @@ namespace Cocos2d
 		[Export ("initWithColor:fadingTo:alongVector:")]
 		IntPtr Constructor (ccColor4B start,ccColor4B fadingTo,PointF alongVector);
 
+		// Constructor from 'CCLayerColor'
+		//- (id) initWithColor:(ccColor4B)color width:(GLfloat)w height:(GLfloat)h;
+		[Export ("initWithColor:width:height:")]
+		IntPtr Constructor (ccColor4B color,float width,float height);
+
+		// Constructor from 'CCLayerColor'
+		//- (id) initWithColor:(ccColor4B)color;
+		[Export ("initWithColor:")]
+		IntPtr Constructor (ccColor4B color);
+
 
 	}
 
@@ -4013,6 +4363,26 @@ namespace Cocos2d
 		[Export ("initWithString:charMapFile:itemWidth:itemHeight:startCharMap:block:")]
 		IntPtr Constructor (string value,string charMapFile,int itemWidth,int itemHeight,char startCharMap,CCSenderCallback _delegate);
 
+		// Constructor from 'CCMenuItemLabel'
+		//-(id) initWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol>*)label target:(id)target selector:(SEL)selector;
+		[Export ("initWithLabel:target:selector:")]
+		IntPtr Constructor (CCNode label,NSObject target,Selector selector);
+
+		// Constructor from 'CCMenuItemLabel'
+		//-(id) initWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol>*)label block:(void(^)(id sender))block;
+		[Export ("initWithLabel:block:")]
+		IntPtr Constructor (CCNode label,CCSenderCallback _delegate);
+
+		// Constructor from 'CCMenuItem'
+		//-(id) initWithTarget:(id)target selector:(SEL)selector;
+		[Export ("initWithTarget:selector:")]
+		IntPtr Constructor (NSObject target,Selector selector);
+
+		// Constructor from 'CCMenuItem'
+		//-(id) initWithBlock:(void(^)(id sender))block;
+		[Export ("initWithBlock:")]
+		IntPtr Constructor (CCSenderCallback _delegate);
+
 
 	}
 
@@ -4043,6 +4413,26 @@ namespace Cocos2d
 		//-(id) initWithString: (NSString*) value block:(void(^)(id sender))block;
 		[Export ("initWithString:block:")]
 		IntPtr Constructor (string value,CCSenderCallback _delegate);
+
+		// Constructor from 'CCMenuItemLabel'
+		//-(id) initWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol>*)label target:(id)target selector:(SEL)selector;
+		[Export ("initWithLabel:target:selector:")]
+		IntPtr Constructor (CCNode label,NSObject target,Selector selector);
+
+		// Constructor from 'CCMenuItemLabel'
+		//-(id) initWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol>*)label block:(void(^)(id sender))block;
+		[Export ("initWithLabel:block:")]
+		IntPtr Constructor (CCNode label,CCSenderCallback _delegate);
+
+		// Constructor from 'CCMenuItem'
+		//-(id) initWithTarget:(id)target selector:(SEL)selector;
+		[Export ("initWithTarget:selector:")]
+		IntPtr Constructor (NSObject target,Selector selector);
+
+		// Constructor from 'CCMenuItem'
+		//-(id) initWithBlock:(void(^)(id sender))block;
+		[Export ("initWithBlock:")]
+		IntPtr Constructor (CCSenderCallback _delegate);
 
 		//Detected properties
 		[Static]
@@ -4193,6 +4583,26 @@ namespace Cocos2d
 		//- (void) setDisabledSpriteFrame:(CCSpriteFrame*)frame;
 		[Export ("setDisabledSpriteFrame:")]
 		void SetDisabledSpriteFrame (CCSpriteFrame frame);
+
+		// Constructor from 'CCMenuItemSprite'
+		//-(id) initWithNormalSprite:(CCNode<CCRGBAProtocol>*)normalSprite selectedSprite:(CCNode<CCRGBAProtocol>*)selectedSprite disabledSprite:(CCNode<CCRGBAProtocol>*)disabledSprite target:(id)target selector:(SEL)selector;
+		[Export ("initWithNormalSprite:selectedSprite:disabledSprite:target:selector:")]
+		IntPtr Constructor (CCNode normalSprite,CCNode selectedSprite,CCNode disabledSprite,NSObject target,Selector selector);
+
+		// Constructor from 'CCMenuItemSprite'
+		//-(id) initWithNormalSprite:(CCNode<CCRGBAProtocol>*)normalSprite selectedSprite:(CCNode<CCRGBAProtocol>*)selectedSprite disabledSprite:(CCNode<CCRGBAProtocol>*)disabledSprite block:(void(^)(id sender))block;
+		[Export ("initWithNormalSprite:selectedSprite:disabledSprite:block:")]
+		IntPtr Constructor (CCNode normalSprite,CCNode selectedSprite,CCNode disabledSprite,CCSenderCallback _delegate);
+
+		// Constructor from 'CCMenuItem'
+		//-(id) initWithTarget:(id)target selector:(SEL)selector;
+		[Export ("initWithTarget:selector:")]
+		IntPtr Constructor (NSObject target,Selector selector);
+
+		// Constructor from 'CCMenuItem'
+		//-(id) initWithBlock:(void(^)(id sender))block;
+		[Export ("initWithBlock:")]
+		IntPtr Constructor (CCSenderCallback _delegate);
 
 
 	}
@@ -4390,6 +4800,7 @@ namespace Cocos2d
 		CCArray Children { get;  }
 
 		//@property(nonatomic,readwrite,retain) CCGridBase* grid;
+		[NullAllowed]
 		[Export ("grid")]
 		CCGridBase Grid { get; set;  }
 
@@ -4739,6 +5150,21 @@ namespace Cocos2d
 	interface CCParticleFire {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4747,6 +5173,21 @@ namespace Cocos2d
 	interface CCParticleFireworks {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4755,6 +5196,21 @@ namespace Cocos2d
 	interface CCParticleSun {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4763,6 +5219,21 @@ namespace Cocos2d
 	interface CCParticleGalaxy {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4771,6 +5242,21 @@ namespace Cocos2d
 	interface CCParticleFlower {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4779,6 +5265,21 @@ namespace Cocos2d
 	interface CCParticleMeteor {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4787,6 +5288,21 @@ namespace Cocos2d
 	interface CCParticleSpiral {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4795,6 +5311,21 @@ namespace Cocos2d
 	interface CCParticleExplosion {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4803,6 +5334,21 @@ namespace Cocos2d
 	interface CCParticleSmoke {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4811,6 +5357,21 @@ namespace Cocos2d
 	interface CCParticleSnow {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -4819,6 +5380,21 @@ namespace Cocos2d
 	interface CCParticleRain {
 
 		//From Generated Property
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
+
 
 	}
 
@@ -5080,6 +5656,21 @@ namespace Cocos2d
 		//-(void) setTexture:(CCTexture2D *)texture withRect:(CGRect)rect;
 		[Export ("setTexture:withRect:")]
 		void SetTexture (CCTexture2D texture,RectangleF withRect);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithFile:(NSString*) plistFile;
+		[Export ("initWithFile:")]
+		IntPtr Constructor (string plistFile);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithDictionary:(NSDictionary*)dictionary;
+		[Export ("initWithDictionary:")]
+		IntPtr Constructor (NSDictionary dictionary);
+
+		// Constructor from 'CCParticleSystem'
+		//-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
+		[Export ("initWithTotalParticles:")]
+		IntPtr Constructor (uint numberOfParticles);
 
 
 	}
@@ -5884,6 +6475,16 @@ namespace Cocos2d
 		[Export ("setupTiles")]
 		void SetupTiles ();
 
+		// Constructor from 'CCSpriteBatchNode'
+		//-(id)initWithTexture:(CCTexture2D *)tex capacity:(NSUInteger)capacity;
+		[Export ("initWithTexture:capacity:")]
+		IntPtr Constructor (CCTexture2D tex,uint capacity);
+
+		// Constructor from 'CCSpriteBatchNode'
+		//-(id)initWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity;
+		[Export ("initWithFile:capacity:")]
+		IntPtr Constructor (string fileImage,uint capacity);
+
 
 	}
 
@@ -6515,6 +7116,11 @@ namespace Cocos2d
 		[Export ("releaseMap")]
 		void ReleaseMap ();
 
+		// Constructor from 'CCAtlasNode'
+		//-(id) initWithTileFile:(NSString*)tile tileWidth:(NSUInteger)w tileHeight:(NSUInteger)h itemsToRender: (NSUInteger) c;
+		[Export ("initWithTileFile:tileWidth:tileHeight:itemsToRender:")]
+		IntPtr Constructor (string tile,uint tileWidth,uint tileHeight,uint itemsToRender);
+
 
 	}
 
@@ -6557,6 +7163,11 @@ namespace Cocos2d
 		[Export ("initWithDuration:scene:orientation:")]
 		IntPtr Constructor (ccTime t,CCScene scene,tOrientation orientation);
 
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6565,6 +7176,11 @@ namespace Cocos2d
 	interface CCTransitionRotoZoom {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6573,6 +7189,11 @@ namespace Cocos2d
 	interface CCTransitionJumpZoom {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6607,6 +7228,11 @@ namespace Cocos2d
 	interface CCTransitionMoveInR {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6615,6 +7241,11 @@ namespace Cocos2d
 	interface CCTransitionMoveInT {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6623,6 +7254,11 @@ namespace Cocos2d
 	interface CCTransitionMoveInB {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6657,6 +7293,11 @@ namespace Cocos2d
 	interface CCTransitionSlideInR {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6665,6 +7306,11 @@ namespace Cocos2d
 	interface CCTransitionSlideInB {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6673,6 +7319,11 @@ namespace Cocos2d
 	interface CCTransitionSlideInT {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6699,6 +7350,16 @@ namespace Cocos2d
 	interface CCTransitionFlipX {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionSceneOriented'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s orientation:(tOrientation)o;
+		[Export ("initWithDuration:scene:orientation:")]
+		IntPtr Constructor (ccTime t,CCScene scene,tOrientation orientation);
+
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6707,6 +7368,16 @@ namespace Cocos2d
 	interface CCTransitionFlipY {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionSceneOriented'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s orientation:(tOrientation)o;
+		[Export ("initWithDuration:scene:orientation:")]
+		IntPtr Constructor (ccTime t,CCScene scene,tOrientation orientation);
+
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6715,6 +7386,16 @@ namespace Cocos2d
 	interface CCTransitionFlipAngular {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionSceneOriented'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s orientation:(tOrientation)o;
+		[Export ("initWithDuration:scene:orientation:")]
+		IntPtr Constructor (ccTime t,CCScene scene,tOrientation orientation);
+
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6723,6 +7404,16 @@ namespace Cocos2d
 	interface CCTransitionZoomFlipX {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionSceneOriented'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s orientation:(tOrientation)o;
+		[Export ("initWithDuration:scene:orientation:")]
+		IntPtr Constructor (ccTime t,CCScene scene,tOrientation orientation);
+
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6731,6 +7422,16 @@ namespace Cocos2d
 	interface CCTransitionZoomFlipY {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionSceneOriented'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s orientation:(tOrientation)o;
+		[Export ("initWithDuration:scene:orientation:")]
+		IntPtr Constructor (ccTime t,CCScene scene,tOrientation orientation);
+
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6739,6 +7440,16 @@ namespace Cocos2d
 	interface CCTransitionZoomFlipAngular {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionSceneOriented'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s orientation:(tOrientation)o;
+		[Export ("initWithDuration:scene:orientation:")]
+		IntPtr Constructor (ccTime t,CCScene scene,tOrientation orientation);
+
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6756,6 +7467,11 @@ namespace Cocos2d
 		[Export ("initWithDuration:scene:withColor:")]
 		IntPtr Constructor (ccTime duration,CCScene scene,ccColor3B withColor);
 
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6764,6 +7480,11 @@ namespace Cocos2d
 	interface CCTransitionCrossFade {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6812,6 +7533,11 @@ namespace Cocos2d
 	interface CCTransitionSplitRows {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6842,6 +7568,11 @@ namespace Cocos2d
 	interface CCTransitionFadeBL {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6850,6 +7581,11 @@ namespace Cocos2d
 	interface CCTransitionFadeUp {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6858,6 +7594,11 @@ namespace Cocos2d
 	interface CCTransitionFadeDown {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6879,6 +7620,11 @@ namespace Cocos2d
 		[Export ("actionWithSize:")]
 		CCActionInterval ActionWithSize (ccGridSize vector);
 
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6887,6 +7633,11 @@ namespace Cocos2d
 	interface CCTransitionProgress {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6895,6 +7646,11 @@ namespace Cocos2d
 	interface CCTransitionProgressRadialCCW {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6903,6 +7659,11 @@ namespace Cocos2d
 	interface CCTransitionProgressRadialCW {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6911,6 +7672,11 @@ namespace Cocos2d
 	interface CCTransitionProgressHorizontal {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6919,6 +7685,11 @@ namespace Cocos2d
 	interface CCTransitionProgressVertical {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6927,6 +7698,11 @@ namespace Cocos2d
 	interface CCTransitionProgressInOut {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6935,6 +7711,11 @@ namespace Cocos2d
 	interface CCTransitionProgressOutIn {
 
 		//From Generated Property
+		// Constructor from 'CCTransitionScene'
+		//-(id) initWithDuration:(ccTime) t scene:(CCScene*)s;
+		[Export ("initWithDuration:scene:")]
+		IntPtr Constructor (ccTime t,CCScene scene);
+
 
 	}
 
@@ -6943,6 +7724,11 @@ namespace Cocos2d
 	interface EAGLView {
 
 		//From Generated Property
+		// Constructor from 'CCGLView'
+		//- (id) initWithFrame:(NSRect)frameRect shareContext:(NSOpenGLContext*)context;
+		[Export ("initWithFrame:shareContext:")]
+		IntPtr Constructor (RectangleF frameRect,NSOpenGLContext shareContext);
+
 
 	}
 
@@ -6951,6 +7737,11 @@ namespace Cocos2d
 	interface MacView {
 
 		//From Generated Property
+		// Constructor from 'CCGLView'
+		//- (id) initWithFrame:(NSRect)frameRect shareContext:(NSOpenGLContext*)context;
+		[Export ("initWithFrame:shareContext:")]
+		IntPtr Constructor (RectangleF frameRect,NSOpenGLContext shareContext);
+
 
 	}
 

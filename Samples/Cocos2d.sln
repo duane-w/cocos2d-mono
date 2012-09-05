@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EffectsTest", "EffectsTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindGen", "..\BindGen.csproj", "{013BA60D-7A36-4E02-A509-FE517CD45703}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneTest", "SceneTest\SceneTest.csproj", "{F3FC219B-2366-483F-B390-9465AB2EE6C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -34,6 +36,12 @@ Global
 		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.Debug|x86.Build.0 = Debug|x86
 		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.Release|x86.ActiveCfg = Release|x86
 		{E27A008C-2ACD-4B7D-8A45-39D2E10C632C}.Release|x86.Build.0 = Release|x86
+		{F3FC219B-2366-483F-B390-9465AB2EE6C2}.AppStore|x86.ActiveCfg = AppStore|x86
+		{F3FC219B-2366-483F-B390-9465AB2EE6C2}.AppStore|x86.Build.0 = AppStore|x86
+		{F3FC219B-2366-483F-B390-9465AB2EE6C2}.Debug|x86.ActiveCfg = Debug|x86
+		{F3FC219B-2366-483F-B390-9465AB2EE6C2}.Debug|x86.Build.0 = Debug|x86
+		{F3FC219B-2366-483F-B390-9465AB2EE6C2}.Release|x86.ActiveCfg = Release|x86
+		{F3FC219B-2366-483F-B390-9465AB2EE6C2}.Release|x86.Build.0 = Release|x86
 		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.AppStore|x86.ActiveCfg = AppStore|x86
 		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.AppStore|x86.Build.0 = AppStore|x86
 		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.Debug|x86.ActiveCfg = Debug|x86
@@ -42,6 +50,6 @@ Global
 		{FD7466F2-97C1-4E17-98FD-B379B1F3EC6A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ..\BindGen.csproj
+		StartupItem = EffectsTest\EffectsTest.csproj
 	EndGlobalSection
 EndGlobal

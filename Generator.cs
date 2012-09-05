@@ -445,6 +445,10 @@ class Declarations
 				methodName = newVal;
 			}
 
+			if (TrivialParser.allowNullProperty.Contains (this.ClassName + "_" + decl.selector) == true)
+			{
+				gencs.AppendLine("[NullAllowed]");
+			}
 
             gencs.AppendFormat("\t\t{0} {1} {{ {2}get; set; }}", decl.retval, methodName,
                      d.getter.StartsWith("is") ? "[Bind (\"" + d.getter + "\")]" : "");
@@ -459,6 +463,7 @@ class Declarations
 		var properties = (from prop in decls
 		                  where prop.is_property == true
 		                  select prop).ToList ();
+
 		foreach (var prop in properties) {
 
 			if (TrivialParser.skipSelector.FirstOrDefault (rl => prop.signature.Contains(rl)) != null)
@@ -475,6 +480,9 @@ class Declarations
 				gencs.AppendLine("\t\t[Abstract]");
 			if (prop.appearance)
 				gencs.AppendLine ("\t\t[Appearance]");
+			if (TrivialParser.allowNullProperty.Contains (this.ClassName + "_" + prop.selector) == true)
+				gencs.AppendLine("\t\t[NullAllowed]");
+
 			gencs.AppendFormat ("\t\t[Export (\"{0}\")]\n", prop.selector);
 
 			gencs.AppendFormat ("\t\t{0} {1} {{ {2} {3} }}\n",
@@ -1148,7 +1156,7 @@ class TrivialParser
     public static Dictionary<string, Declarations> interfaceCache = new Dictionary<string, Declarations>();
     void ProcessInterface (string iface)
 	{
-		if (iface.Contains ("interface CCScene"))
+		if (iface.Contains ("interface CCTransitionSlideInT"))
 			debugStop = true;
 
 		iface = iface.Replace (":", " : ");
@@ -1184,6 +1192,9 @@ class TrivialParser
 				//interfaceSB.AppendFormat ("\n\t[BaseType (typeof ({0}))]", "NSObject");
 			}
 
+			//interfaceSB.AppendFormat ("\n\t[BaseType (typeof ({0}))]", typeString);
+			decl.ParentClassName = typeString;
+
 			if (iface.Contains("<")) {
 
  				int ii = iface.IndexOf ("<");
@@ -1196,8 +1207,6 @@ class TrivialParser
 						usedProtocols.Add (ooo.Trim ());
 					decl.Protocols = usedProtocols;
 				}
-				//interfaceSB.AppendFormat ("\n\t[BaseType (typeof ({0}))]", typeString);
-				decl.ParentClassName = typeString;
 			}
 
 			string newTypeString = null;
@@ -1375,6 +1384,7 @@ class TrivialParser
 	static public List<string> makeSelectorInternalWith = null;
 	static public List<string> preserverConstructorAsMethod = null;
 	static public List<string> skipSelectorByName = null;
+	static public List<string> allowNullProperty = null;
 
     void Run(string[] args)
     {
@@ -1438,6 +1448,7 @@ namespace Cocos2d
 		makeSelectorInternalWith = ruleList.Where (rl => rl.StartsWith ("MakeSelectorInternalWith")).Select (rl => rl.Split('#')[1].Trim()).ToList();
 		preserverConstructorAsMethod = ruleList.Where (rl => rl.StartsWith ("PreserverConstructorAsMethod")).Select (rl => rl.Split('#')[1].Trim()).ToList();
 		skipSelectorByName = ruleList.Where (rl => rl.StartsWith ("SkipSelectorByName")).Select (rl => rl.Split('#')[1].Trim()).ToList();
+		allowNullProperty = ruleList.Where (rl => rl.StartsWith ("AllowNullProperty")).Select (rl => rl.Split('#')[1].Trim()).ToList();
 
 		foreach (string f in sources)
         {

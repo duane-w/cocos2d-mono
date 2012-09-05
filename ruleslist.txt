@@ -46,3 +46,4 @@ ChangeReturnType#CCSequence_actionOne:two:.CCFiniteTimeAction
 ChangeReturnType#CCMenuItemFont_itemWithString:.CCMenuItemFont
 ChangeSignatureForSelector#CCMenuItemToggleCallback.CCMenuItemToggle sender
 RenameDelegate#CCMenuItemToggleDelegateInitWithItemsblock.CCMenuItemToggleCallback
+AllowNullProperty#CCNode_grid

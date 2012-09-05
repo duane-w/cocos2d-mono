@@ -101,5 +101,26 @@
     <Content Include="..\Assets\background3.png">
       <Link>background3.png</Link>
     </Content>
+    <Content Include="..\Assets\b1.png">
+      <Link>b1.png</Link>
+    </Content>
+    <Content Include="..\Assets\b2.png">
+      <Link>b2.png</Link>
+    </Content>
+    <Content Include="..\Assets\f1.png">
+      <Link>f1.png</Link>
+    </Content>
+    <Content Include="..\Assets\f2.png">
+      <Link>f2.png</Link>
+    </Content>
+    <Content Include="..\Assets\icon.icns">
+      <Link>icon.icns</Link>
+    </Content>
+    <Content Include="..\Assets\r1.png">
+      <Link>r1.png</Link>
+    </Content>
+    <Content Include="..\Assets\r2.png">
+      <Link>r2.png</Link>
+    </Content>
   </ItemGroup>
 </Project>

@@ -102,6 +102,13 @@ namespace Cocos2d
 
 	public struct ccColor4B
 	{
+		public ccColor4B(GLubyte r, GLubyte g, GLubyte b, GLubyte a)
+		{
+			this.r = r;
+			this.g = g;
+			this.b = b;
+			this.a = a;
+		}
 		public GLubyte	r;
 		public GLubyte	g;
 		public GLubyte	b;
