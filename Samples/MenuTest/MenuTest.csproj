@@ -26,6 +26,7 @@
     <EnableCodeSigning>false</EnableCodeSigning>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <PlatformTarget>x86</PlatformTarget>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -79,6 +80,7 @@
     <Compile Include="Layer2.cs" />
     <Compile Include="Layer3.cs" />
     <Compile Include="Layer4.cs" />
+    <Compile Include="LayerPriorityTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
@@ -127,6 +129,9 @@
     </Content>
     <Content Include="..\Assets\menuitemsprite.png">
       <Link>menuitemsprite.png</Link>
+    </Content>
+    <Content Include="..\Assets\icon.icns">
+      <Link>icon.icns</Link>
     </Content>
   </ItemGroup>
 </Project>

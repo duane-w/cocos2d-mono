@@ -3,6 +3,7 @@ using Cocos2d;
 using MonoMac.ObjCRuntime;
 using MonoMac.Foundation;
 using System.Drawing;
+using GLubyte = System.Byte;
 
 namespace MenuTest
 {
@@ -108,6 +109,18 @@ namespace MenuTest
 
 			alignedH = true;
 			alignMenusH ();
+		}
+
+		[Export("menuCallbackOpacity:")]
+		void MenuCallbackOpacity (NSObject sender)
+		{
+			CCMenu menu = (CCMenu)((CCMenuItemImage)sender).Parent;
+			GLubyte opacity = menu.Opacity;
+
+			if (opacity == 128)
+				menu.SetOpacity(255);
+			else
+				menu.SetOpacity(128);
 		}
 	}
 }

@@ -59,7 +59,9 @@ namespace MenuTest
 			CCMenuItemFont.DefaultFontName = "Marker Felt";
 			CCMenuItemFont item6 = new CCMenuItemFont ("Priority Test", 
 				delegate (NSObject sender) {
-					
+				CCScene scene = new CCScene();
+				scene.AddChild (new LayerPriorityTest());
+				CCDirector.SharedDirector ().PushScene (scene);
 			});
 			        
 			CCMenuItemFont.DefaultFontName = "Courier New";
@@ -69,8 +71,12 @@ namespace MenuTest
 				director.View.Window.Close ();
 			});
 
-			NSArray arr = NSArray.FromObjects (item1, item2, item3, item4, item5, item6, item7);
-			menu = new CCMenu (arr);
+			CCTintBy color_action = new CCTintBy(0.5f, 0, -255, -255);
+			var color_back = color_action.Reverse ();
+			var seq = new CCSequence (color_action, color_back);
+			item7.RunAction (new CCRepeatForever (seq));
+
+			menu = new CCMenu (item1, item2, item3, item4, item5, item6, item7);
 			menu.AlignItemsVertically ();
 
 			for (uint i = 0; i < menu.Children.Count(); i++) {
@@ -120,10 +126,6 @@ namespace MenuTest
 		void cb(NSObject sender)
 		{
 			CCScene scene =  new CCScene();
-			//CCLabelTTF label = new CCLabelTTF("Goodbye World", "Marker Felt", 64);
-			//SizeF size = CCDirector.SharedDirector().WinSize ();
-			//label.Position = new PointF(size.Width/2, size.Height/2);
-			//scene.AddChild(label);
 			scene.AddChild(new Layer3());
 			CCDirector.SharedDirector().ReplaceScene(scene);
 		}
